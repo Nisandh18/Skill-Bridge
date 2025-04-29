@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Networking</title>
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .contact-box {
+      background: #fff;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      width: 500px;
+      text-align: center;
+      box-sizing: border-box;
+    }
+
+    h2 {
+      color: #333;
+      margin-bottom: 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    /* Form Elements */
+    input, select, textarea {
+      width: 100%;
+      padding: 14px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 16px;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: #2575fc;
+      outline: none;
+    }
+
+    button {
+      background-color: #2575fc;
+      color: white;
+      border: none;
+      padding: 15px;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 10px;
+      width: 100%;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #6a11cb;
+    }
+
+    /* File Input */
+    input[type="file"] {
+      border: none;
+      padding: 12px;
+    }
+
+    /* Success Message */
+    #status-message {
+      margin-top: 15px;
+      font-size: 16px;
+      color: green;
+      display: none;
+    }
+
+    /* Media Query for Responsive Design */
+    @media (max-width: 500px) {
+      .contact-box {
+        width: 90%;
+        padding: 30px;
+      }
+      h2 {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="contact-box">
+  <h2>Connect with Our Recruiter</h2>
+  <form id="contact-form">
+    <!-- Name -->
+    <input type="text" name="name" placeholder="Your Full Name" required>
+    
+    <!-- Email -->
+    <input type="email" name="email" placeholder="Your Email Address" required>
+    
+    <!-- Phone Number -->
+    <input type="tel" name="phone" placeholder="Your Phone Number" required pattern="[0-9]{10}">
+    
+    <!-- Location -->
+    <input type="text" name="location" placeholder="Your Location (optional)">
+    
+    <!-- Message Type -->
+    <select name="message-type" required>
+      <option value="job-inquiry">Job Inquiry</option>
+      <option value="general-query">General Query</option>
+      <option value="feedback">Feedback</option>
+    </select>
+    
+    <!-- Subject -->
+    <input type="text" name="subject" placeholder="Subject of your message" required>
+    
+    <!-- Message -->
+    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+    
+    <!-- File Attachment -->
+    <input type="file" name="resume" accept=".pdf, .docx, .txt" />
+
+    <!-- Send Button -->
+    <button type="submit">Send Message</button>
+  </form>
+  
+  <p id="status-message">✅ Your message has been sent successfully!</p>
+</div>
+
+<script>
+  const form = document.getElementById('contact-form');
+  const statusMessage = document.getElementById('status-message');
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    statusMessage.style.display = 'block';  // Show success message
+    form.reset();  // Clear the form
+    setTimeout(function() {
+      statusMessage.style.display = 'none';  // Hide message after 3 seconds
+    }, 3000);
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Skill Bridge</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: Arial, sans-serif;
+      background: url('Background/Contact Us BG.jpg') no-repeat center center/cover;
+      color: white;
+      line-height: 1.8;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      padding: 15px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .navbar .nav-links a {
+      text-decoration: none;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      margin-right: 20px;
+      transition: color 0.3s;
+    }
+    .navbar a:hover { color: #2575fc; }
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo-container img { height: 40px; }
+    .contact-container {
+      width: 90%;
+      max-width: 850px;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(15px);
+      margin: 50px auto;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+    .contact-container h2 {
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .contact-container form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .contact-container input,
+    .contact-container textarea,
+    .contact-container select {
+      padding: 12px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.9);
+      color: black;
+    }
+    .contact-container button {
+      padding: 12px;
+      background: #2575fc;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .contact-container button:hover {
+      background: #1a5bbf;
+    }
+  </style>
+</head>
+<body>
+  <div class="contact-container">
+    <h2>Contact Us</h2>
+    <form action="mailto:skillbridgejobconsultancy@proton.me" method="post" enctype="text/plain">
+      <input type="text" name="name" placeholder="Full Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <input type="text" name="phone" placeholder="Phone Number" required>
+      <select name="inquiry_type" required>
+        <option value="">Select Inquiry Type</option>
+        <option value="job_seeker">Job Seeker</option>
+        <option value="recruiter">Recruiter</option>
+        <option value="partnership">Business Partnership</option>
+        <option value="general">General Inquiry</option>
+      </select>
+      <select name="preferred_contact" required>
+        <option value="">Preferred Contact Method</option>
+        <option value="email">Email</option>
+        <option value="phone">Phone Call</option>
+        <option value="whatsapp">WhatsApp</option>
+      </select>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</body>
+</html>

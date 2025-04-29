@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post a Job - Job Portal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            overflow-x: hidden;
+        }
+
+        .post-job-container {
+            width: 90%;
+            max-width: 800px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            padding: 40px;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        .post-job-container h2 {
+            font-size: 26px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .post-job-form input, .post-job-form textarea, .post-job-form select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .post-job-form button {
+            width: 100%;
+            padding: 12px;
+            background: #2575fc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .post-job-form button:hover {
+            background: #1a5bbf;
+        }
+    </style>
+</head>
+<body>
+    <div class="post-job-container">
+        <h2>Post a Job</h2>
+        <form class="post-job-form">
+            <input type="text" placeholder="Job Title" required>
+            <textarea placeholder="Job Description" rows="5" required></textarea>
+            <input type="text" placeholder="Company Name" required>
+            <input type="text" placeholder="Location" required>
+            <input type="text" placeholder="Salary" required>
+            <button type="submit">Post Job</button>
+        </form>
+    </div>
+</body>
+</html>

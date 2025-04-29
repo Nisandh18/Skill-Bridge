@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us - Skill Bridge</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    /* Full-page background image */
+    body {
+      font-family: Arial, sans-serif;
+      background: url('Background/About us pic.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #333;
+      line-height: 1.8;
+    }
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255,255,255,0.9);
+      padding: 15px 30px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .navbar .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+    .navbar a {
+      text-decoration: none;
+      color: #333;
+      font-size: 16px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    .navbar a:hover {
+      color: #2575fc;
+    }
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo-container img {
+      height: 40px;
+    }
+    .logo-container span {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+    }
+    /* Hero Section */
+    .hero {
+      background: url('Background/About us original.jpg') no-repeat center center/cover;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      top:0;
+      left:0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+    }
+    .hero h1 {
+      position: relative;
+      color: white;
+      font-size: 48px;
+      z-index: 1;
+    }
+    /* About Container (remains white without extra pattern) */
+    .about-container {
+      width: 95%;
+      max-width: 1200px;
+      background: white;
+      margin: 40px auto;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      animation: fadeIn 1s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .about-container h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #2575fc;
+    }
+    .about-container p {
+      font-size: 18px;
+      margin-bottom: 20px;
+      color: #555;
+    }
+    .about-container strong {
+      color: #333;
+    }
+    /* Call to Action */
+    .cta {
+      text-align: center;
+      margin-top: 40px;
+    }
+    .cta a {
+      display: inline-block;
+      padding: 12px 30px;
+      background: #2575fc;
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
+    .cta a:hover {
+      background: #1a5bbf;
+    }
+  </style>
+</head>
+<body>
+    <div class="logo-container">
+      <img src="Background/SkillBridge-removebg-preview.png" alt="Skill Bridge Logo" />
+      <span>Skill Bridge</span>
+    </div>
+  </div>
+  
+  <!-- Hero Section -->
+  <div class="hero">
+    <h1>About Us</h1>
+  </div>
+  
+  <!-- About Content -->
+  <div class="about-container">
+    <h2>Welcome to Skill Bridge</h2>
+    <p>
+      Welcome to Skill Bridge, the premier job portal exclusively for management students. Our mission is to bridge the gap between talented management graduates and top-tier employers by offering a dynamic platform that connects ambition with opportunity. We understand the unique challenges and aspirations of management students, which is why we are committed to creating an ecosystem that fosters career growth, professional development, and long-term success.
+    </p>
+    <p>
+      <strong>Who We Are</strong><br>
+      Founded in 2025, Skill Bridge was created to cater specifically to the needs of management students seeking to launch or advance their careers. Our platform provides exclusive job listings, internship opportunities, and career resources designed to help students and recent graduates thrive in the ever-evolving business landscape.
+    </p>
+    <p>
+      At Skill Bridge, we believe that talent and hard work should always be recognized and rewarded. That’s why we work closely with top employers, industry leaders, and recruiters to bring the best opportunities directly to management students. Our commitment to innovation, accessibility, and excellence sets us apart as the go-to platform for career advancement in the management field.
+    </p>
+    <p>
+      <strong>Our Mission</strong><br>
+      Our mission at Skill Bridge is simple: to empower management students by providing them with the best career opportunities, professional development resources, and industry connections. We aim to be more than just a job portal—we strive to be a career accelerator that helps students navigate the job market, build their professional network, and achieve their aspirations.
+    </p>
+    <p>
+      We are dedicated to helping students and graduates land their dream jobs by offering:
+      <br>
+      - Personalized job matching: Ensuring students find opportunities that align with their skills, interests, and career goals.
+      <br>
+      - Comprehensive career resources: Including resume-building tools, interview preparation guides, and career coaching services.
+      <br>
+      - Industry insights and mentorship: Providing expert guidance, industry trends, and mentorship programs to give students a competitive edge.
+    </p>
+    <p>
+      <strong>Why Choose Skill Bridge?</strong><br>
+      Exclusive Focus on Management: We specialize in job opportunities exclusively for management students, ensuring that all listings are relevant and high-quality.
+      <br>
+      Strong Industry Partnerships: We collaborate with leading companies and recruiters actively seeking skilled management graduates.
+      <br>
+      Comprehensive Career Support: From resume and cover letter assistance to mock interviews and professional networking events, we offer extensive career development tools.
+      <br>
+      User-Friendly and Efficient Platform: Our seamless interface and intelligent job-matching algorithms make job searching faster and easier than ever.
+      <br>
+      Internship & Entry-Level Opportunities: Gain hands-on experience and industry exposure through our wide range of internships, apprenticeships, and entry-level job listings.
+    </p>
+    <p>
+      <strong>Our Vision</strong><br>
+      We envision a future where every management student has access to the right opportunities to succeed in their chosen career paths. By leveraging technology, industry connections, and expert guidance, we aim to be the leading career hub for aspiring business professionals. Our vision is to cultivate a thriving community where students, educators, and employers can come together to shape the future of the management industry.
+    </p>
+    <p>
+      <strong>Join Us on Your Career Journey</strong><br>
+      Whether you're a management student seeking your first job, an employer looking for top talent, or an educational institution aiming to support student career growth, we welcome you to be part of our growing network.
+      <br>
+      At Skill Bridge, we don’t just connect students with jobs—we help build careers. Take the next step towards your professional journey with us today!
+    </p>
+    <p>
+      Thank you for choosing Skill Bridge—where the future of management careers begins!
+    </p>
+    <div class="cta">
+      <a href="join.html" target="_blank">Join Us Now</a>
+    </div>
+  </div>
+</body>
+<iframe 
+src="chatbot.html" style="position: fixed; bottom: 0; right: 0; border: none; width: 360px; height: 500px; z-index: 9999;" allow="clipboard-write"></iframe>
+></iframe>
+</html>

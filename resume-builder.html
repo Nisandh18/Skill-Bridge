@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resume Builder Advanced</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #8360c3, #2ebf91);
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 20px;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .container, .preview {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 500px;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    input, textarea, select, button {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 15px;
+    }
+    button {
+      background: #2ebf91;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #20a17a;
+    }
+    label {
+      font-weight: bold;
+      margin-top: 10px;
+      color: #444;
+    }
+    .preview {
+      border: 2px dashed #ccc;
+      overflow-y: auto;
+      max-height: 95vh;
+    }
+    .preview h2 {
+      text-align: center;
+      margin-bottom: 5px;
+    }
+    .section {
+      margin-top: 15px;
+    }
+    .section-title {
+      font-weight: bold;
+      font-size: 18px;
+      margin-bottom: 5px;
+      color: #555;
+      border-bottom: 1px solid #ddd;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Advanced Resume Builder</h1>
+    <form id="resume-form">
+      <input type="text" name="name" placeholder="Full Name" required oninput="updatePreview()">
+      <input type="email" name="email" placeholder="Email" required oninput="updatePreview()">
+      <input type="tel" name="phone" placeholder="Phone" required oninput="updatePreview()">
+      <input type="text" name="address" placeholder="Address" oninput="updatePreview()">
+      <input type="url" name="linkedin" placeholder="LinkedIn Profile" oninput="updatePreview()">
+      <input type="url" name="github" placeholder="GitHub Profile" oninput="updatePreview()">
+      <textarea name="summary" placeholder="Professional Summary" oninput="updatePreview()"></textarea>
+      <textarea name="education" placeholder="Education (Degree, University, Year)" oninput="updatePreview()"></textarea>
+      <textarea name="experience" placeholder="Work Experience (Company, Role, Years)" oninput="updatePreview()"></textarea>
+      <textarea name="skills" placeholder="Skills (comma separated)" oninput="updatePreview()"></textarea>
+      <textarea name="certifications" placeholder="Certifications & Courses" oninput="updatePreview()"></textarea>
+
+      <label>Choose a Template:</label>
+      <select name="template" onchange="updatePreview()">
+        <option value="classic">Classic</option>
+        <option value="modern">Modern</option>
+        <option value="creative">Creative</option>
+        <option value="minimalist">Minimalist</option>
+        <option value="elegant">Elegant</option>
+      </select>
+
+      <button type="button" onclick="generatePDF()">Download Resume</button>
+    </form>
+  </div>
+
+  <div class="preview" id="preview">
+    <h2>Resume Preview</h2>
+    <div id="preview-content"></div>
+  </div>
+
+  <script>
+    function updatePreview() {
+      const form = document.getElementById('resume-form');
+      const formData = new FormData(form);
+      const preview = document.getElementById('preview-content');
+      preview.innerHTML = `
+        <div><strong>${formData.get('name') || ''}</strong></div>
+        <div>${formData.get('email') || ''} | ${formData.get('phone') || ''}</div>
+        <div>${formData.get('linkedin') || ''} | ${formData.get('github') || ''}</div>
+
+        <div class="section">
+          <div class="section-title">Summary</div>
+          <div>${formData.get('summary') || ''}</div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">Education</div>
+          <div>${formData.get('education') || ''}</div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">Experience</div>
+          <div>${formData.get('experience') || ''}</div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">Skills</div>
+          <div>${formData.get('skills') || ''}</div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">Certifications</div>
+          <div>${formData.get('certifications') || ''}</div>
+        </div>
+      `;
+    }
+
+    function generatePDF() {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+      const form = document.getElementById('resume-form');
+      const formData = new FormData(form);
+      const template = formData.get('template');
+
+      let y = 20;
+
+      // Draw Page Border
+      doc.setLineWidth(1.5);
+      doc.rect(10, 10, 190, 277);
+
+      // Template Style
+      if (template === 'modern') {
+        doc.setFont('helvetica', 'bold');
+        doc.setFontSize(24);
+        doc.setTextColor(50, 50, 50);
+      } else if (template === 'creative') {
+        doc.setFont('times', 'bolditalic');
+        doc.setFontSize(26);
+        doc.setTextColor(0, 102, 204);
+      } else if (template === 'minimalist') {
+        doc.setFont('courier', 'normal');
+        doc.setFontSize(14);
+        doc.setTextColor(80, 80, 80);
+      } else if (template === 'elegant') {
+        doc.setFont('times', 'italic');
+        doc.setFontSize(20);
+        doc.setTextColor(100, 50, 150);
+      } else {
+        doc.setFont('courier', 'bold');
+        doc.setFontSize(20);
+      }
+
+      // Draw Header
+      doc.text(formData.get('name'), 105, y, { align: 'center' });
+      y += 10;
+      doc.setFontSize(12);
+      doc.text(`${formData.get('email')} | ${formData.get('phone')}`, 105, y, { align: 'center' });
+      y += 10;
+      if (formData.get('linkedin') || formData.get('github')) {
+        doc.text(`${formData.get('linkedin')} | ${formData.get('github')}`, 105, y, { align: 'center' });
+        y += 10;
+      }
+      y += 10;
+
+      function drawSection(title, content) {
+        if (content) {
+          doc.setFontSize(16);
+          doc.setFont(undefined, 'bold');
+          doc.text(title, 20, y);
+          y += 8;
+          doc.setFontSize(12);
+          doc.setFont(undefined, 'normal');
+          const lines = doc.splitTextToSize(content, 170);
+          doc.text(lines, 20, y);
+          y += lines.length * 7 + 5;
+        }
+      }
+
+      drawSection('Professional Summary', formData.get('summary'));
+      drawSection('Education', formData.get('education'));
+      drawSection('Experience', formData.get('experience'));
+      drawSection('Skills', formData.get('skills'));
+      drawSection('Certifications', formData.get('certifications'));
+
+      doc.save('Resume.pdf');
+    }
+  </script>
+
+</body>
+</html>

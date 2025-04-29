@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Explore Jobs - Skill Bridge</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: url('Background/jobs-bg.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+            line-height: 1.8;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255,255,255,0.9);
+            padding: 15px 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .navbar .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        .navbar a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        .navbar a:hover {
+            color: #2575fc;
+        }
+        .search-bar {
+            margin: 20px auto;
+            text-align: center;
+        }
+        .search-bar input {
+            width: 50%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .job-listings {
+            width: 80%;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .job-item {
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+        .job-item:last-child {
+            border-bottom: none;
+        }
+        .job-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #2575fc;
+        }
+        .apply-btn {
+            display: inline-block;
+            padding: 8px 15px;
+            background: #2575fc;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .apply-btn:hover {
+            background: #1a5bbf;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="explore-jobs.html">Explore Jobs</a>
+            <a href="join.html">Register</a>
+            <a href="profile.html">Profile</a>
+        </div>
+    </div>
+    
+    <div class="search-bar">
+        <input type="text" placeholder="Search for jobs..." />
+    </div>
+    
+    <div class="job-listings">
+        <div class="job-item">
+            <p class="job-title">Marketing Manager</p>
+            <p>Company: ABC Corp | Location: New York, NY</p>
+            <p>Experience: 3+ years</p>
+            <a href="#" class="apply-btn">Apply Now</a>
+        </div>
+        <div class="job-item">
+            <p class="job-title">Financial Analyst</p>
+            <p>Company: XYZ Ltd | Location: San Francisco, CA</p>
+            <p>Experience: 2+ years</p>
+            <a href="#" class="apply-btn">Apply Now</a>
+        </div>
+    </div>
+</body>
+</html>

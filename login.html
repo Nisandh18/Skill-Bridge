@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Skill Bridge</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('Background/background login page.png') no-repeat center center/cover;
+            overflow: hidden;
+        }
+
+        .login-container {
+            display: flex;
+            width: 850px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+            overflow: hidden;
+            padding: 20px;
+            transform: perspective(1000px) rotateY(0deg);
+        }
+
+        .login-left {
+            width: 50%;
+            color: white;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .login-left h2 {
+            font-size: 26px;
+            margin-bottom: 15px;
+        }
+
+        .login-left p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        .login-right {
+            width: 50%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(20px);
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .logo {
+            width: 250px;
+            margin-bottom: 5px;
+        }
+
+        .login-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .input-box {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 2px solid transparent;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border-radius: 8px;
+            font-size: 16px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .input-box:focus {
+            border-color: #00aaff;
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .login-btn {
+            width: 90%;
+            padding: 10px;
+            background: linear-gradient(135deg, #1e90ff, #00aaff);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .login-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0px 5px 15px rgba(0, 170, 255, 0.6);
+        }
+
+        .login-options {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            margin-top: 5px;
+            color: white;
+            width: 90%;
+        }
+
+        .create-now-container {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 16px;
+            color: white;
+        }
+
+        .create-now-container a {
+            color: #00aaff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .create-now-container a:hover {
+            color: #66ccff;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-left">
+            <h2>Welcome to Skill Bridge</h2>
+            <p>Find your dream job and build your future with us.</p>
+        </div>
+        <div class="login-right">
+            <img src="Background/SkillBridge-removebg-preview.png" alt="Job Portal Logo" class="logo">
+            <div class="login-title">User Login</div>
+            <input type="text" class="input-box" id="username" placeholder="Username">
+            <input type="password" class="input-box" id="password" placeholder="Password">
+            <button class="login-btn" onclick="validateLogin()">Login</button>
+            <div class="login-options">
+                <label><input type="checkbox"> Remember Me</label>
+                <a href="forgot-password.html">Forgot Password?</a>
+            </div>
+            <div class="create-now-container">
+                <p>New user? <a href="register.html">Create Now</a></p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function validateLogin() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            var validUsername = "admin";
+            var validPassword = "password123";
+
+            if (username === validUsername && password === validPassword) {
+                alert("Login successful! Redirecting...");
+                window.location.href = "dashboard.html";
+            } else {
+                alert("Invalid username or password. Try again.");
+            }
+        }
+
+        gsap.to(".login-container", { duration: 1.5, opacity: 1, ease: "power2.out", y: 0 });
+        gsap.from(".login-container", { duration: 1.5, y: -50, ease: "power2.out" });
+        gsap.to(".logo", { duration: 1.5, scale: 1.1, repeat: -1, yoyo: true, ease: "sine.inOut" });
+    </script>
+    <iframe 
+    src="chatbot.html" style="position: fixed; bottom: 0; right: 0; border: none; width: 360px; height: 500px; z-index: 9999;" allow="clipboard-write"></iframe>
+  ></iframe>  
+</body>
+</html>
